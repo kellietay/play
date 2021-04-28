@@ -23,7 +23,7 @@ def spacedString(input:str, wordList: list[str]):
     # use Set for O(1) time complexity
     wordSet = set(wordList)
     memo = {}
-
+    
     # define recursive function
     def helper(s:str):
         if s in memo:
