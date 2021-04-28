@@ -17,7 +17,7 @@ Output: None/Null
 Input: "bloombergisfun", ["bloom", "berg", "bloomberg","is","fun"]
 Output: "bloom berg is fun"
 '''
-
+FOUND = False
 
 def spacedString(input:str, wordList: list[str]):
     # use Set for O(1) time complexity
@@ -26,12 +26,16 @@ def spacedString(input:str, wordList: list[str]):
     
     # define recursive function
     def helper(s:str):
+        global FOUND
         if s in memo:
             return memo[s]
 
         result = str('')
         for i in range(len(s)):
             word = s[:i+1]
+            if FOUND == True:
+                memo[s] = result
+                return result
             if word in wordSet:
                 if word != s:
                     restOfWord = helper(s[i+1:])
@@ -40,6 +44,8 @@ def spacedString(input:str, wordList: list[str]):
 
                 else:
                     result += word
+                    FOUND = True
+
         memo[s] = result       
         return result
     
