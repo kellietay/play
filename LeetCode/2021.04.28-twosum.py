@@ -35,9 +35,9 @@ class Solution(object):
         for i,num in enumerate(nums):
             check = target - num
             if check in map:
-                return([i,map[check]])
+                return([map[check],i+1])
             else:
-                map[num] = i
+                map[num] = i+1
         return []
 
 
