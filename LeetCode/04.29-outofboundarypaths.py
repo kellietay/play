@@ -41,4 +41,7 @@ class Solution(object):
             return paths
         return helper(m, n, maxMove, startRow, startColumn)
 
+#Complexity: Time = O(m x n x maxMove). Space = O(m x n x N)
 
+a = Solution()
+print(a.findpaths(2,2,2,0,0))
