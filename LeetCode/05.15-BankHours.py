@@ -19,9 +19,7 @@ class Bank():
         return False
 
 
-        
-
-
+    
 rbs = Bank(9,16)
 ms = Bank(11,17)
 jpm = Bank(14,20)
